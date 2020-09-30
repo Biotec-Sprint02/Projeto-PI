@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Calculadora
+         </title>
+     </head>
+<body>
+              
+                 
+                 
+                   <b style="font-size: 60px;margin: 60px;margin-left: 240px ;">
+                    <span style="color:#32b9cd;">B</span>io
+                    <span style="color: #32b9cd;">T</span>ec</b> <br>
+
+<div style="float: left;"> <img src="img/tecx.png" alt="logo" style="height: 80px;"> <br><br>    
+                    <img src="img/remedios.png" alt="remedios" style="height: 80px;"> <br><br>
+                        <img src="img/caixa.png" alt="caixa" style="height: 80px;"> <br><br> </div>
+                    
+
+    <div style="background-color:#32b9cd; height: 450px ; width:500px; float: left; margin-left: 0px ; border-style:double;">  
+        <div style="margin:50px;">
+            <u><b style="font-size: 25px;">
+                 <u>CALCULE AQUI A <span style="color: red;">PERDA</span> DO SEU CARREGAMENTO    </u>  <br><br>                                  
+                 Entre com a quantidade de lotes: <br>                                  <input style="margin-left: 90px;" id="qtdlote" type="text">   <br>
+                 Entre com o valor de cada lote: <br>                                   <input style="margin-left: 90px;" id="valorlote" type="text"> <br>
+                 Informe quantos lotes voce perdeu: <br>                                <input style="margin-left: 90px;" id="perdalote" type="text"> <br> <br>
+                <button style=" background-color: red; color: white; margin-left: 90px;" onclick="multiplicar()">CALCULE SUA PERDA</button>
+            <br><br>
+               
+           <br><br>
+        </div>
+    </div>
+            <br><br>
+        <div style="background-color: #29e2c1; float: left; margin: 10px; border-style: double;" id="div_mens"></div>      
+    
+
+
+</body>
+    
+
+ <script>
+
+
+function multiplicar() {
+        var loteValorTotal = (Number(qtdlote.value) * Number(valorlote.value));
+        var lotePerda = (Number(perdalote.value) * Number(valorlote.value));
+        var loteGanho = (loteValorTotal * 0.95) / 100;
+
+        div_mens.innerHTML = `Neste carregamento você <i><u><b><spam style="color:green;">
+                                investiu</spam></b></u></i> um total de: R$${loteValorTotal} <br>
+                                Porém você teve um <i><u><b><spam style="color:red;"> prejuízo </spam></b></u></i> de: R$${lotePerda} <br>
+                                Utilizando o nosso sistema você teria um <i><u><b><spam style="color:red;"> prejuízo </spam><b/></u></i> de somente: R$${loteGanho} 
+                                <br><br>
+                                <b><spam style="color:black";"> Viu!? ainda tem dúvidas se irá nos contratar? </spam><b/>`;
+    }
+
+
+
+</script>
