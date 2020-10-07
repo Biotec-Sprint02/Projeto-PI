@@ -13,14 +13,14 @@ body {
 
 /* Header */
   .header{
-    background-color: #29e2c1;
+    background-color: black;
     height: 100px;
     padding-top: 0px;
   }
   .title-header img{
-    height: 130px;
-    width: 150px;
-
+    height: 120px;
+    width: 140px;
+    position: relative;
   } 
   /* fim HEADER */
 
@@ -33,29 +33,29 @@ body {
     float: left;
   }
   .nav{
-    float: right;
+    float: center;
   }
   .nav a{
     text-decoration: none;
-    color: #586768;
+    color: #e5e910;
     text-transform: uppercase;
     font-size: 18px;
   }
   .nav li{
     display: inline-block;
     padding: 20px;
-    padding: 20px 20px 0 40px;
+    padding: 20px 30px 0 40px;
   }
   /* Fim NAV */
 
   /* SHOWCASE */
 .showcase{ 
-  background-image: url(../imagem/transporte.jpg);
+  background-image: url(../imagem/inicio.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  color: #ffca18;
+  color: #48bae7;
   text-align: center;
-  min-height: 400px;
+  min-height: 407px;
 }
 
 .showcase h1{
@@ -71,12 +71,12 @@ body {
 
  /* SOBRE NÓS */
  .sobre{ 
-  background-image: url(../imagem/somos.jpeg);
+  background-image: url(../imagem/quem-somos.png);
   background-size: cover;
   background-repeat: no-repeat;
-  color: #ffca18;
+  color:  #9f3333;
   text-align: center;
-  min-height: 400px;
+  min-height: 407px;
 }
 
 .sobre h1{
@@ -90,14 +90,48 @@ body {
 }
 /* Fim SOBRE NÓS */
 
+/* Equipe */
+
+.equipe{
+  background-image: url(../imagem/equipe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 407px;
+}
+
+.equipe h2{
+  margin: 0;  
+  font-size: 55px;
+  padding-top: 30px;
+  text-align: center;
+  color: #48bae7;
+}
+.equipe p{
+  font-size: 22px;
+  color:  #9f3333;
+}
+/* Fim Equipe*/
+
+/* MONITORAMENTO */
+
+.monitoramento {
+background-image: url(../imagem/Tela\ de\ monitoramento2.png);
+background-size: cover;
+  background-repeat: no-repeat;
+  color: #48bae7;
+  text-align: center;
+  min-height: 460px;
+}
+/* Fim do  MONITORAMENTO */
+
 /* SISTEMA DE ATENDIMENTO AO CLIENTE */
 .sac{ 
   background-image: url(../imagem/sac.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  color: #7e4e83;
+  color: #48bae7;
   text-align: "float: left";
-  min-height: 400px;
+  min-height: 407px;
 }
 
 .sac h2{
@@ -122,12 +156,12 @@ body {
 /* Login */
 
 .login {
-  background-color: darkgrey;
+  background-image: url(../imagem/login.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  color: #110513;
+  color:  #9f3333;
   text-align: "float: left";
-  min-height: 400px;
+  min-height: 407px;
 }
 
 .login h1{
