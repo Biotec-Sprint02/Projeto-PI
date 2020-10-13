@@ -1,5 +1,4 @@
 create database BioTec;
-
 use BioTec;
 
 create table login(
@@ -8,13 +7,28 @@ email varchar (55),
 senha varchar (20)
 );
 
+create table trajeto(
+idViagem int primary key auto_increment,
+inicio varchar(50),
+destino varchar(50),
+horasaida datetime,
+horachegada datetime,
+fkMotorista int,
+fkLote int,
+fkSensor int,
+foreign key(fkMotorista) references motorista(idMotorista),
+foreign key(fkLote) references lote(idLote),
+foreign key(fkSensor) references sensor(idSensor)
+)auto_increment = 100000;
+
 insert into login values
 (100, 'joãobatista@gmail.com', '12345678'),
 (101, 'paulacarvalho@outlook.com', '25262728'),
 (102, 'gabrielamiranda@gmail.com', '35363637'),
 (103, 'caiogomesvieira@gmail.com', '46589302'); 
 
-select * from login;
+select * from trajeto;
+desc trajeto;
 
 create table empresa(
 idEmpresa int primary key,
@@ -34,10 +48,9 @@ create table motorista(
 IdMotorista int primary key, -- Colocamos isso pois no CPF ja tem CNH e o RG porem n sabemos se sera isso.
 nomeMotorista varchar (40),
 CPFmotorista char (15),  
-modeloVeiculo varchar (40),
-InicioEntrega date,
-FimEntrega date
+modeloVeiculo varchar (40)
 );
+
 
 insert into motorista values 
 (1, 'Gael Davi Hugo','077.491.058-59', 'Caminhao', '2020-09-09', '2020-10-10')
@@ -52,6 +65,7 @@ idLote int primary key,
 nomeRemedio varchar (40),
 quantidade int
 );
+
 
 insert into lote values
 (122, 'Insulina', '50')
