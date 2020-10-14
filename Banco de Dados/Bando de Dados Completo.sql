@@ -68,33 +68,25 @@ desc Trajeto;
 -- --------------------------------------------------------------------------------------------------------------------------
 
 insert into Empresa values 
-(null, 'XMan-Evolution', '09361-110');
+(null, 'XMan-Evolution', '09361-110'),
+(null, 'Sancargo','04356-000');
 
 select * from Empresa;
 
 insert into Motorista values 
-(23745527802 , 'José das Couves' , 'Ford - R440');
+(23745527802 , 'José das Couves' , 'Ford - R440'),
+(54678291002 , 'Claúdio Ramos', 'Scania - 112');
 
 select * from Motorista;
 
 insert into Lote values
-(null, 'Decadron', '50');
+(null, 'Decadron', '50'),
+(null, 'Xalacon', '100');
 
 select * from Lote;
 
 insert into dadosAPI values
-(null,'DHT11 - 1' , '1.5' , '30%');
+(null,'DHT11 - 1' , '1.5' , '30%'),
+(null,'DHT11 - 2', '5', '20%');
 
 select * from dadosAPI;
-
-insert into Login values
-(23745527802, 'Xman@evolution.com', 'Versão Brasileira Hebbert Richards');
-
-select * from Login,Motorista where fkcpfMotorista = cpfMotorista;
-
-insert into Trajeto values
-(null , 'Av. das Magnólias - Jardim Cardoso nº1010' , 'Itaquaquecetuba - Esqueci nº15' , 
-'2020-05-25 08:30:05' , '2020-05-26 00:31:05' , 23745527802 , 50000 , 100000 );
-
-select * from Trajeto,Motorista,Lote,dadosAPI where fkcpfMotorista = cpfMotorista and fkLote = idLote
-and fkDados = idDados;
