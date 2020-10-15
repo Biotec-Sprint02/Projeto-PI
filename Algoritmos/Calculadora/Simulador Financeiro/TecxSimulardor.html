@@ -46,7 +46,7 @@
 function multiplicar() {
         var loteValorTotal = (Number(qtdlote.value) * Number(valorlote.value));
         var lotePerda = (Number(perdalote.value) * Number(valorlote.value));
-        var loteGanho = (loteValorTotal * 0.95) / 100;
+        var loteGanho = lotePerda - (lotePerda * 0.95);
 
         div_mens.innerHTML = `Neste carregamento você <i><u><b><spam style="color:green;">
                                 investiu</spam></b></u></i> um total de: R$${loteValorTotal} <br>
