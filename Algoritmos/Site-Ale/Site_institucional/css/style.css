@@ -158,8 +158,32 @@
                 padding: 80px 0px 80px 0px;
             }
             
-            .section_aboutUs .container img {
-                width: 350px;
+            .section_aboutUs .container .next {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .section_aboutUs .container .next .next-item {
+                max-width: 230px;
+                margin: 20px 25px 0px 25px;
+            }
+            
+            .section_aboutUs .container .next .next-item img {
+                width: 100px;
+                margin: 0px 10px 0px 10px;
+            }
+            
+            .section_aboutUs .container .next .next-item .item-title {
+                margin: 5px;
+                text-align: center;
+                font-size: 22px;
+                font-weight: 400;
+            }
+            
+            .section_aboutUs .container .next .next-item p {
+                text-align: justify;
             }
             /* FIM DA SECTION_AboutUs*/
             /* INICIO DA SECTION_AboutTecx */
@@ -348,7 +372,5 @@
                 transition: 0.1s;
             }
             
-            .copryghtMessage {
-                padding-left: 80px;
-            }
+            .copryghtMessage {}
             /* FIM DO FOOTER */
