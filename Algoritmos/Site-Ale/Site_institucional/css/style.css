@@ -166,7 +166,7 @@
             }
             
             .section_aboutUs .container .next .next-item {
-                max-width: 230px;
+                max-width: 210px;
                 margin: 20px 25px 0px 25px;
             }
             
@@ -183,7 +183,8 @@
             }
             
             .section_aboutUs .container .next .next-item p {
-                text-align: justify;
+                font-size: 18px;
+                text-align: initial;
             }
             /* FIM DA SECTION_AboutUs*/
             /* INICIO DA SECTION_AboutTecx */
