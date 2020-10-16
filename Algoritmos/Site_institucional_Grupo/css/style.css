@@ -32,7 +32,7 @@
             }
             
             .description p {
-                text-align: justify;
+                text-align: center;
             }
             
             .icon {
@@ -109,6 +109,7 @@
             }
             
             .section_welcome p {
+                margin: 5px 0px 20px 0px;
                 font-size: 20px;
             }
             
@@ -218,10 +219,7 @@
                 background-color: whitesmoke;
             }
             
-            .section_financial .container img {
-                width: 350px;
-            }
-            
+
             .section_financial .container {
                 display: flex;
                 flex-direction: column;
@@ -229,6 +227,78 @@
                 justify-content: center;
                 padding: 80px 0px 80px 0px;
             }
+
+
+            .section_financial .container .calculator {
+           
+            }
+
+            .section_financial .container .calculator-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;   
+                margin-top: 20px;
+            }
+
+            .section_financial .container .calculator p{
+                margin-top: 0;
+            }
+
+
+            .section_financial .container .calculator .inputs-container{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .section_financial .container .calculator .input{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 10px;
+         
+            }
+
+            .section_financial .container .calculator .input p{
+                text-align: end;
+                margin: 0 10px 0px 0px;
+            }
+
+            .section_financial .container .calculator input{
+                width: 230px;
+                height: 35px;
+                padding-left: 15px;
+                border: 0;
+                box-sizing: border-box;
+                background-color: white;
+                border: 1px solid rgba(60, 60, 60, 0.2);
+                border-radius: 4px;
+                outline: none;
+            }
+
+            .section_financial .container .calculator button{
+                width: 100px;
+                height: 40px;
+                margin-top: 10px;
+                outline: none;
+                color: gray;
+                border: 2px solid #07BEB8;
+                border-radius: 100px;
+                background-color: transparent;
+                transition: 0.1s;
+            }
+
+            .section_financial .container .calculator button:hover{
+                background-color: #07BEB8;
+                color: white;
+            }
+
+            .section_financial .container .calculator .message{
+                max-width: 400px;
+                margin: 0px 20px 0px 20px;
+            }
+            
             /* FIM DA SECTION_financial*/
             /* INICIO DA SECTION_team */
             
@@ -258,6 +328,8 @@
             
             .section_team .container .photos .photo img {
                 width: 120px;
+                height: 120px;
+                border-radius: 50%;
                 margin: 0px 50px 0px 50px;
             }
             
@@ -373,5 +445,8 @@
                 transition: 0.1s;
             }
             
-            .copryghtMessage {}
+            .copryghtMessage {
+                text-align: center;
+
+            }
             /* FIM DO FOOTER */
