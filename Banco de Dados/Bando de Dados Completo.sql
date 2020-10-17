@@ -1,5 +1,4 @@
 create database BioTec;
-
 use BioTec;
 
 create table Empresa(
@@ -8,58 +7,30 @@ nomeEmpresa varchar(40),
 cep varchar(40)
 )auto_increment = 1000;
 
-select * from Empresa;
-
-create table Motorista(
-cpfMotorista char(15) primary key,
+create table Login(
+cpfMotorista varchar(20) primary key,
+senha varchar(20),
+email varchar(40),
 nomeMotorista varchar (40),
-modeloVeiculo varchar (40)
+fkEmpresa int,
+foreign key (fkEmpresa) references Empresa(idEmpresa)
 );
 
-select * from Motorista;
-
-create table Lote(
-idLote int primary key auto_increment,
-nomeRemedio varchar (40),
-quantidade int
+create table Veiculo(
+idVeiculo int primary key auto_increment,
+modeloVeiculo varchar (40),
+tamanhoBau float -- metros quadrados m²
 )auto_increment = 50000;
 
-select * from Lote;
-
-create table dadosAPI(
-idDados int primary key auto_increment, -- Sensor DhT11
+create table Dados(
+idDados int primary key auto_increment,
+logDados datetime,
 sensor varchar(10),
-temperatura float,
-umidade varchar(20)
+temperatura float, -- em graus °C
+umidade varchar(20),
+fkVeiculo int,
+foreign key (fkVeiculo) references Veiculo(idVeiculo)
 )auto_increment = 100000;
-
-select * from dadosAPI;
-
-create table Login(
-fkcpfMotorista char(15),
-email varchar (55),
-senha varchar (40),
-foreign key (fkcpfMotorista) references Motorista(cpfMotorista)
-);
-
-select * from Login;
-
-create table Trajeto(
-idViagem int primary key auto_increment,
-inicio varchar(50),
-destino varchar(50),
-horaSaida datetime,
-horaChegada datetime,
-fkcpfMotorista char(15),
-fkLote int,
-fkDados int,
-foreign key(fkcpfMotorista) references Motorista(cpfMotorista),
-foreign key(fkLote) references Lote(idLote),
-foreign key(fkDados) references dadosAPI(idDados)
-)auto_increment = 500000;
-
-select * from Trajeto;
-desc Trajeto;
 
 -- --------------------------------------------------------------------------------------------------------------------------
 -- ==========================================================================================================================
@@ -68,25 +39,20 @@ desc Trajeto;
 -- --------------------------------------------------------------------------------------------------------------------------
 
 insert into Empresa values 
-(null, 'XMan-Evolution', '09361-110'),
-(null, 'Sancargo','04356-000');
+(null , 'XMan-Evolution', '09361-110'),
+(null , 'Sancargo','04356-000');
 
 select * from Empresa;
 
-insert into Motorista values 
-(23745527802 , 'José das Couves' , 'Ford - R440'),
-(54678291002 , 'Claúdio Ramos', 'Scania - 112');
+insert into Login values
+(23745527802 , 'luiz123' , 'luiz.gsilva@bandtec.com.br' , 'João Pedro' , null);
 
-select * from Motorista;
+select * from Login;
 
-insert into Lote values
-(null, 'Decadron', '50'),
-(null, 'Xalacon', '100');
+insert into Veiculo values
+(null , 'R440' , '20.5');
 
-select * from Lote;
+select * from Veiculo;
 
-insert into dadosAPI values
-(null,'DHT11 - 1' , '1.5' , '30%'),
-(null,'DHT11 - 2', '5', '20%');
-
-select * from dadosAPI;
+insert into Dados values
+(null , '2020-10-05 14:53' , 'DHT11 - 1', '5.5' , '50%' , null);
