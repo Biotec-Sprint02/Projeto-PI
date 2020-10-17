@@ -5,7 +5,7 @@
                 margin: 0;
                 padding: 0;
             }
-             
+            
             html {
                 scroll-behavior: smooth;
             }
@@ -185,7 +185,7 @@
             
             .section_aboutUs .container .next .next-item p {
                 font-size: 18px;
-                text-align: initial;
+                text-align: center;
             }
             /* FIM DA SECTION_AboutUs*/
             /* INICIO DA SECTION_AboutTecx */
@@ -219,7 +219,6 @@
                 background-color: whitesmoke;
             }
             
-
             .section_financial .container {
                 display: flex;
                 flex-direction: column;
@@ -227,45 +226,42 @@
                 justify-content: center;
                 padding: 80px 0px 80px 0px;
             }
-
-
+            
             .section_financial .container .calculator {
-           
+                margin-top: 10px;
             }
-
+            
             .section_financial .container .calculator-container {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                align-items: flex-start;   
+                align-items: flex-start;
                 margin-top: 20px;
             }
-
-            .section_financial .container .calculator p{
+            
+            .section_financial .container .calculator p {
                 margin-top: 0;
             }
-
-
-            .section_financial .container .calculator .inputs-container{
+            
+            .section_financial .container .calculator .inputs-container {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
             }
-
-            .section_financial .container .calculator .input{
+            
+            .section_financial .container .calculator .input {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 margin-bottom: 10px;
-         
             }
-
-            .section_financial .container .calculator .input p{
+            
+            .section_financial .container .calculator .input p {
                 text-align: end;
                 margin: 0 10px 0px 0px;
             }
-
-            .section_financial .container .calculator input{
+            
+            .section_financial .container .calculator input {
                 width: 230px;
                 height: 35px;
                 padding-left: 15px;
@@ -276,11 +272,12 @@
                 border-radius: 4px;
                 outline: none;
             }
-
-            .section_financial .container .calculator button{
-                width: 100px;
+            
+            .section_financial .container .calculator button {
+                width: 120px;
                 height: 40px;
-                margin-top: 10px;
+                font-size: 14px;
+                margin-top: 30px;
                 outline: none;
                 color: gray;
                 border: 2px solid #07BEB8;
@@ -288,17 +285,16 @@
                 background-color: transparent;
                 transition: 0.1s;
             }
-
-            .section_financial .container .calculator button:hover{
+            
+            .section_financial .container .calculator button:hover {
                 background-color: #07BEB8;
                 color: white;
             }
-
-            .section_financial .container .calculator .message{
+            
+            .section_financial .container .calculator .message {
                 max-width: 400px;
                 margin: 0px 20px 0px 20px;
             }
-            
             /* FIM DA SECTION_financial*/
             /* INICIO DA SECTION_team */
             
@@ -447,6 +443,5 @@
             
             .copryghtMessage {
                 text-align: center;
-
             }
             /* FIM DO FOOTER */
