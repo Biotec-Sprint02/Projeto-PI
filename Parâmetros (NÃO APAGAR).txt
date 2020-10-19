@@ -7,8 +7,6 @@ produtos deverá estar dentro do parâmetro de 40% e
 cional de Vigilância Sanitária), que tem como principal foco estabelecer os requisitos de Boas Práticas de Distribuição e Armazenagem e de Boas Práticas de Transporte de Medicamentos.
 
 
-
-
 /// um pouco mais sobre a lei em respeito a transporte///
 
 Os estabelecimentos que exerçam as atividades de distribuição, armazenagem ou transporte de medicamentos devem dispor de sistema de gestão da qualidade capaz de documentar, verificar e assegurar os requisitos específicos a cada operação com impacto na qualidade executada.
