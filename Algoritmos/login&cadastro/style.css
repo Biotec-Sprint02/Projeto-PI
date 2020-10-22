@@ -20,8 +20,8 @@ span {
 
 .card-section {
     display: flex;
-    width: 75%;
-    height: 75vh;
+    width: 90%;
+    min-height: 80vh;
     flex-direction: row;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(60, 60, 60, 0.2);
@@ -63,8 +63,8 @@ span {
 .form-side {
     display: flex;
     width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -72,18 +72,48 @@ span {
     border-radius: 0px 10px 10px 0px;
 }
 
-.form-side .container {
+.form-side #register_step1 {
     display: flex;
-    width: 65%;
-    justify-content: center;
+    width: 100%;
+    align-items: center;
     flex-direction: column;
+}
+
+.form-side #register_step1 .container .div_msg {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+}
+
+.form-side #register_step1 .container .div_msg p {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: black
+}
+
+.form-side #register_step2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-side #register_step2 .container .div_msg {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+}
+
+.form-side #register_step2 .container .div_msg p {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: black
 }
 
 .form-side .logo-tecx {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 65%;
+    width: 70%;
     flex-direction: row;
 }
 
@@ -93,15 +123,21 @@ span {
 }
 
 .form-side .logo-tecx h1 {
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 3px 0px;
     font-size: 35px;
     color: black;
 }
 
+.form-side .container {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 .form-side .container p {
-    text-align: end;
-    font-size: 15px;
-    color: rgba(60, 60, 60, 0.7);
+    font-size: 16px;
+    color: black;
     margin-bottom: 10px;
 }
 
@@ -116,20 +152,39 @@ span {
     outline: none;
 }
 
+.form-side .container .ruaInput {
+    width: 75%;
+    margin-right: 2%;
+}
+
+.form-side .container .numInput {
+    width: 23%;
+}
+
+.form-side .container .cidadeInput {
+    width: 65%;
+    margin-right: 2%;
+}
+
+.form-side .container .cepInput {
+    width: 33%;
+}
+
 .form-side .container .form-buttons {
     display: flex;
+    width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin: 25px 0px 12px 0px;
 }
 
 .form-side .container .form-buttons p {
     margin: 0;
-    text-decoration: underline;
     font-size: 16px;
-    color: rgba(60, 60, 60, 0.8);
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .form-side .container .form-buttons button {
