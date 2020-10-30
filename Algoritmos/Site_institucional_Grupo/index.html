@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,6 @@
     <link rel="shortcut icon" href="img/logo_empresa.png" />
     <title>BioTec: Institucional</title>
 </head>
-
 <body>
     <div class="header">
         <div class="container">
@@ -34,7 +32,6 @@
             </div>
         </div>
     </div>
-
     <section class="section_welcome" id="section_welcome">
         <div class="container">
             <h1 class="welcome_msg">Bem vindos a <span>B</span>io<span>T</span>ec</h1>
@@ -42,7 +39,6 @@
             <a href="#section_aboutUs"><button>Começar</button></a>
         </div>
     </section>
-
     <section class="section_aboutUs" id="section_aboutUs">
         <div class="container">
             <p class="title_msg"><span>S</span>obre <span>n</span>ós</p>
@@ -56,7 +52,7 @@
             <div class="next">
                 <div class="next-item">
                     <img src="img/icons/missao.png" alt="">
-                    <p class="item-title"><span>M</span>isão</p>
+                    <p class="item-title"><span>M</span>issão</p>
                     <p>- Redução de custos, maior qualidade e eficiência para o transporte de medicamentos.</p>
                 </div>
                 <div class="next-item">
@@ -76,7 +72,6 @@
             <!--<img src="img/3669402.png" alt="" srcset="">-->
         </div>
     </section>
-
     <section class="section_aboutTecx" id="section_aboutTecx">
         <div class="container">
             <p class="title_msg"><span>T</span>ec<span>X</span></p>
@@ -88,7 +83,6 @@
             <img src="img/desenhoDeSolucao2.png" alt="">
         </div>
     </section>
-
     <section class="section_financial" id="section_financial">
         <div class="container">
             <p class="title_msg"><span>F</span>inanceiro - <span>T</span>ec<span>X</span></p>
@@ -100,31 +94,26 @@
                     <div class="inputs-container">
                         <div class="input">
                             <p>Quantidade de lotes</p>
-                            <input type="number" id="" placeholder="Ex: 100">
+                            <input type="number" id="qtdlote" placeholder="Ex: 100">
                         </div>
                         <div class="input">
                             <p>Valor de cada lote</p>
-                            <input type="number" id="" placeholder="Ex: R$100">
+                            <input type="number" id="valorlote" placeholder="Ex: R$100">
                         </div>
                         <div class="input">
                             <p>Quantidade de lotes perdidos</p>
-                            <input type="number" id="" placeholder="Ex: 50">
+                            <input type="number" id="perdalote" placeholder="Ex: 50">
                         </div>
                     </div>
 
-                    <div class="message">
-                        <p>Você <span>investiu</span> um total de: R$10.000,00</p>
-                        <p>Porém você teve um prejuízo de: R$50.00,00</p>
-                        <p>Utilizando o nosso sistema você teria um prejuízo de apenas: R$ 2500,00</p>
-                        <p></p>
+                    <div id="msg" class="message">
+
                     </div>
                 </div>
-                <button>Calcular</button>
-
+                <button onclick="calcular()">Calcular</button>
             </div>
         </div>
     </section>
-
     <section class="section_team" id="section_team">
         <div class="container">
             <p class="title_msg"><span>E</span>quipe</p>
@@ -157,7 +146,6 @@
             </div>
         </div>
     </section>
-
     <footer id="footer">
         <div class="container">
             <div class="containerTwo">
@@ -192,5 +180,15 @@
         </div>
     </footer>
 </body>
-
 </html>
+<script>
+    function calcular() {
+        var loteValorTotal = (Number(qtdlote.value) * Number(valorlote.value));
+        var lotePerda = (Number(perdalote.value) * Number(valorlote.value));
+        var loteGanho = lotePerda - (lotePerda * 0.95);
+        msg.innerHTML = `
+                        <p>Você <span>investiu</span> um total de: R$ ${loteValorTotal}</p>
+                        <p>Porém você teve um prejuízo de: R$ ${lotePerda}</p>
+                        <p>Utilizando o nosso sistema você teria um prejuízo de apenas: R$$${loteGanho.toFixed(2)}</p> `;
+    }
+</script>
