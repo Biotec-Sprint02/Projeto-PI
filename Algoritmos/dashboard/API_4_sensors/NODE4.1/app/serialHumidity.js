@@ -16,7 +16,7 @@ class NewArduinoHumidity {
         return this.listDataHour;
     }
 
-    SetConnection() {
+    SetConnection() { 
         setInterval(() => {
             let data_float = sensors.dht11({ minHum: 40, maxHum: 70 });
 

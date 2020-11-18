@@ -8,7 +8,10 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/logoTecx.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,900&display=swap"
+        rel="stylesheet">
+    <!-- PUXAR O ESTILO DO GRÁFICO -->
     <style>
         canvas {
             -moz-user-select: none;
@@ -20,6 +23,7 @@
 
 <body>
     <input type="checkbox" id="check" style="display: none;">
+    <!-- HEADER -->
     <div class="header">
         <div class="container">
             <div class="title-header">
@@ -32,15 +36,12 @@
             </div>
         </div>
     </div>
+    <!-- FIM HEADER -->
+    <!-- MENU FECHADO -->
     <div class="side-menu">
         <label class="option" for="check">
             <img src="img/icons/menu.svg" alt="">
         </label>
-        <a onclick="changeToIndex()">
-            <div class="option">
-                <img src="img/icons/bar-chart-2.svg" alt="">
-            </div>
-        </a>
         <a onclick="changeToVehicles()">
             <div class="option">
                 <img src="img/icons/truck.svg" alt="">
@@ -55,18 +56,14 @@
             <img src="img/icons/log-out.svg" alt="">
         </div>
     </div>
+    <!-- FIM MENU ABERTO -->
+    <!-- MENU ABERTO -->
     <div class="side-menu_open">
         <nav>
             <label class="option" for="check">
                 <img src="img/icons/menu.svg" alt="">
                 <p>Menu</p>
             </label>
-            <a onclick="changeToIndex()">
-                <div class="option">
-                    <img src="img/icons/bar-chart-2.svg" alt="">
-                    <p>Home</p>
-                </div>
-            </a>
             <a onclick="changeToVehicles()">
                 <div class="option">
                     <img src="img/icons/truck.svg" alt="">
@@ -87,6 +84,7 @@
             </a>
         </nav>
     </div>
+    <!-- FIM MENU ABERTO -->
     <section class="section_main">
         <section class="section_container" id="home">
             <div class="charts">
@@ -158,6 +156,7 @@
                 </div>
             </div>
         </section>
+        <!-- Uma div por semântica = section pegando toda a tela de monitoramento -->
         <section class="section_container" id="vehicles">
             <div class="buttons">
                 <div class="buttons_div" style="background-color: #339FFF;;">
@@ -187,24 +186,26 @@
                 </div>
             </div>
             <div class="charts">
-                <div class="chart_div">
-                    <div class="container">
-                        <p><span>V</span>olvo <span>F</span>H - (DOB-4567) </p>
-                        <img class="truck_img" src="img/vehicles/volvo-truck.png" alt="">
-                        <div class="data-vehicle">
-                            <img src="img/icons/thermometer.svg" alt="">
-                            <label id='average2'>
-                                0.00
-                            </label>
-                        </div>
-                        <div class="data-vehicle">
-                            <img src="img/icons/droplet.svg" alt="">
-                            <label id='averageHumidity2'>
-                                0.00
-                            </label>
+                <a onclick="changeToIndex()">
+                    <div class="chart_div">
+                        <div class="container">
+                            <p><span>V</span>olvo <span>F</span>H - (DOB-4567) </p>
+                            <img class="truck_img" src="img/vehicles/volvo-truck.png" alt="">
+                            <div class="data-vehicle">
+                                <img src="img/icons/thermometer.svg" alt="">
+                                <label id='average2'>
+                                    0.00
+                                </label>
+                            </div>
+                            <div class="data-vehicle">
+                                <img src="img/icons/droplet.svg" alt="">
+                                <label id='averageHumidity2'>
+                                    0.00
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <div class="chart_div">
                     <div class="container">
                         <p><span>S</span>cannia <span>4</span>50 - (DRT-7789) </p>
@@ -261,6 +262,7 @@
                 </div>
             </div>
         </section>
+        <!-- PÁGINA DE EDITAR PERFIL DAS EMPRESAS -->
         <section class="section_container" id="profile" style="display: none;">
             <div class="container">
                 <img src="img/examples/pngwing.com.p" alt="">
@@ -283,7 +285,9 @@
                 </div>
             </div>
         </section>
+        <!-- FIM PÁGINA DE EDITAR PERFIL EMPRESAS-->
         <script>
+            /* FUNÇÕES DO JS PARA A TROCA DE TELAS */
             function changeToVehicles() {
                 home.style = "display: none";
                 vehicles.style = "display: block";
@@ -374,7 +378,6 @@
             this.lastIndexTemp = 0;
             this.time = 0;
 
-
             function get_humidade() {
                 var http = new XMLHttpRequest();
                 http.open('GET', 'http://localhost:3000/api/humidity', false);
@@ -383,7 +386,6 @@
                 var obj = JSON.parse(http.responseText);
                 document.getElementById('averageHumidity').textContent = obj.average;
                 document.getElementById('averageHourHumidity').textContent = obj.averageHour;
-
                 document.getElementById('averageHumidity2').textContent = obj.average;
                 document.getElementById('averageHumidity3').textContent = obj.average;
                 document.getElementById('averageHumidity4').textContent = obj.average;
@@ -423,27 +425,24 @@
                     };
 
                     var novoRegistroHumi = {
-                            momento: momento,
-                            leitura: get_humidade()
-                        }
-                        // config_chart_temp.data.labels.shift(); // apagar o primeiro
+                        momento: momento,
+                        leitura: get_humidade()
+                    }
+                    // config_chart_temp.data.labels.shift(); // apagar o primeiro
                     config_chart_temp.data.labels.push(novoRegistro.momento); // incluir um novo momento
                     // config_chart_temp.data.datasets[0].data.shift();  // apagar o primeiro
                     config_chart_temp.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
-
 
                     config_chart_humi.data.labels.push(novoRegistroHumi.momento);
 
                     config_chart_humi.data.datasets[0].data.push(novoRegistroHumi.leitura);
 
-
                     window.graficoLinha.update();
                     window.graficoHumidade.update();
 
                     receberNovasTemperaturas()
-                }, 5000); // 7000 ms -> 7 segundos
+                }, 7000); // 7000 ms -> 7 segundos
             }
-
 
             //Gráfico umidade
             var config_chart_humi = {
@@ -498,6 +497,7 @@
             }
             window.onload = plotarGrafico;
         </script>
+        <!-- FIM  FUNÇÕES DO JS PARA A TROCA DE TELAS-->
 </body>
 
 </html>
