@@ -11,14 +11,14 @@ bairro varchar(50),
 cidade varchar(50),
 cep char(9),
 emailEmpresa varchar(50),
-senhaEmpresa varchar(50)
+senhaEmpresa varchar(30)
 )auto_increment = 1000;
 
 create table Veiculo(
 idVeiculo int primary key auto_increment,
 modeloVeiculo varchar(40),
 placaVeiculo varchar(8),
-tamanhoBau float -- metros quadrados m²
+tamanhoBau decimal (6,2) -- metros cubicos m³
 )auto_increment = 5000;
 
 create table Motorista(
@@ -30,22 +30,24 @@ fkVeiculo int,
 foreign key (fkVeiculo) references Veiculo(idVeiculo)
 );
 
-create table Dados(
-idDados int primary key auto_increment,
-logDados datetime,
-sensor varchar(10),
-temperatura float, -- em graus °C
-umidade varchar(20),
+create table Sensor(
+idSensor int primary key auto_increment,
 fkVeiculo int,
 foreign key (fkVeiculo) references Veiculo(idVeiculo)
-)auto_increment = 100000;
+);
 
+create table Dados(
+logDados datetime,
+temperatura float, -- em graus °C
+umidade varchar(20),
+fkSensor int,
+foreign key (fkSensor) references Sensor(idSensor)
+);
 -- --------------------------------------------------------------------------------------------------------------------------
 -- ==========================================================================================================================
 -- 											Separação das Tabelas e dos Inserts
 -- ==========================================================================================================================
 -- --------------------------------------------------------------------------------------------------------------------------
-
 insert into Empresa values 
 (null, 'EmpresaTop', '57213650000132', 'Rua Haddock Lobo', '1000', 'Limeira', 'Sao Paulo', '09922000', 'empresatop@gmail.com', '12345678'),
 (null, 'Transnova', '57213650000999', 'Av. Paulista', '13', 'Consolação', 'Sao Paulo', '03344000', 'transnova@gmail.com', '23456789'),
@@ -54,7 +56,6 @@ insert into Empresa values
 (null, 'expressoARGHI', '57213650000555', 'Rua Jabaquara', '6740', 'Saúde', 'Sao Paulo', '18522000', 'expressoarghi@gmail.com', '98765432');
 
 select * from Empresa;
-
 
 insert into Veiculo values
 (null , 'R440' , 'DEF-8598' , '20.5'),
@@ -65,7 +66,6 @@ insert into Veiculo values
 
 select * from Veiculo;
 
-
 insert into Motorista values
 ('06485568777', 'Maicão Perez', 1000, 5000),
 ('06485568666', 'José Luiz', 1001, 5001),
@@ -75,12 +75,20 @@ insert into Motorista values
 
 select * from Motorista;
 
+insert into Sensor values
+(null, 5000),
+(null, 5001),
+(null, 5002),
+(null, 5003),
+(null, 5004);
+
+select * from Sensor;
 
 insert into Dados values
-(null, '2020-11-05 15:00', 'DHT11 - 1', '3.5', '50%', 5000),
-(null, '2020-12-09 16:00', 'DHT11 - 2', '2.5', '60%', 5001),
-(null, '2020-09-08 17:00', 'DHT11 - 3', '5', '45%', 5002),
-(null, '2020-08-07 18:00', 'DHT11 - 4', '6.5', '63%', 5003),
-(null, '2020-07-06 19:00', 'DHT11 - 5', '6.8', '57%', 5004);
+('2020-11-05 15:00', '3.5', '50%', 1),
+('2020-12-09 16:00', '2.5', '60%', 2),
+('2020-09-08 17:00', '5', '45%', 3),
+('2020-08-07 18:00', '6.5', '63%', 4),
+('2020-07-06 19:00', '6.8', '57%', 5);
 
 select * from Dados;
