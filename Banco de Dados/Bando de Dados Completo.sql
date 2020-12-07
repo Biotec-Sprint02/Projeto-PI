@@ -11,7 +11,9 @@ bairro varchar(50),
 cidade varchar(50),
 cep char(9),
 emailEmpresa varchar(50),
-senhaEmpresa varchar(30)
+senhaEmpresa varchar(30),
+telefone1 bigint,
+telefone2 bigint
 )auto_increment = 1000;
 
 create table Veiculo(
@@ -25,6 +27,7 @@ create table Motorista(
 cpfMotorista varchar(20) primary key,
 nomeMotorista varchar (40),
 fkEmpresa int,
+telefoneMotorista bigint,
 foreign key (fkEmpresa) references Empresa(idEmpresa),
 fkVeiculo int,
 foreign key (fkVeiculo) references Veiculo(idVeiculo)
@@ -49,11 +52,11 @@ foreign key (fkSensor) references Sensor(idSensor)
 -- ==========================================================================================================================
 -- --------------------------------------------------------------------------------------------------------------------------
 insert into Empresa values 
-(null, 'EmpresaTop', '57213650000132', 'Rua Haddock Lobo', '1000', 'Limeira', 'Sao Paulo', '09922000', 'empresatop@gmail.com', '12345678'),
-(null, 'Transnova', '57213650000999', 'Av. Paulista', '13', 'Consolação', 'Sao Paulo', '03344000', 'transnova@gmail.com', '23456789'),
-(null, 'Bioexpress', '57213650000888', 'Rua Augusta', '66', 'Praça da Árvore', 'Sao Paulo', '01942000', 'bioexpress@gmail.com', '12301230'),
-(null, 'Patrus', '57213650000777', 'Rua Bela Cintra', '234', 'Chácara Klabin', 'Sao Paulo', '01352400', 'patrus@gmail.com', '12457890'),
-(null, 'expressoARGHI', '57213650000555', 'Rua Jabaquara', '6740', 'Saúde', 'Sao Paulo', '18522000', 'expressoarghi@gmail.com', '98765432');
+(null, 'EmpresaTop', '57213650000132', 'Rua Haddock Lobo', '1000', 'Limeira', 'Sao Paulo', '09922000', 'empresatop@gmail.com', '12345678', 11988887777, 11966665555),
+(null, 'Transnova', '57213650000999', 'Av. Paulista', '13', 'Consolação', 'Sao Paulo', '03344000', 'transnova@gmail.com', '23456789', 31999887766, 31988222277),
+(null, 'Bioexpress', '57213650000888', 'Rua Augusta', '66', 'Praça da Árvore', 'Sao Paulo', '01942000', 'bioexpress@gmail.com', '12301230', 11945678987, 11987234523),
+(null, 'Patrus', '57213650000777', 'Rua Bela Cintra', '234', 'Chácara Klabin', 'Sao Paulo', '01352400', 'patrus@gmail.com', '12457890', 11990807060, 11991234567),
+(null, 'expressoARGHI', '57213650000555', 'Rua Jabaquara', '6740', 'Saúde', 'Sao Paulo', '18522000', 'expressoarghi@gmail.com', '98765432', 11977447744, 11981828384);
 
 select * from Empresa;
 
@@ -67,11 +70,11 @@ insert into Veiculo values
 select * from Veiculo;
 
 insert into Motorista values
-('06485568777', 'Maicão Perez', 1000, 5000),
-('06485568666', 'José Luiz', 1001, 5001),
-('06485568555', 'Paulo Silva', 1002, 5002),
-('06485568444', 'João de Deus', 1003, 5003),
-('06485568333', 'Bruno Santos', 1004, 5004);
+('06485568777', 'Maicão Perez', 1000, 11971717171, 5000),
+('06485568666', 'José Luiz', 1001, 11980996677, 5001),
+('06485568555', 'Paulo Silva', 1002, 11987651234, 5002),
+('06485568444', 'João de Deus', 1003, 31997958786, 5003),
+('06485568333', 'Bruno Santos', 1004, 31998979696, 5004);
 
 select * from Motorista;
 
