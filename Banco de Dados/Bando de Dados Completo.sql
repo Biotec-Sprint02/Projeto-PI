@@ -26,8 +26,8 @@ tamanhoBau decimal (6,2) -- metros cubicos m³
 create table Motorista(
 cpfMotorista varchar(20) primary key,
 nomeMotorista varchar (40),
-fkEmpresa int,
 telefoneMotorista bigint,
+fkEmpresa int,
 foreign key (fkEmpresa) references Empresa(idEmpresa),
 fkVeiculo int,
 foreign key (fkVeiculo) references Veiculo(idVeiculo)
@@ -70,11 +70,11 @@ insert into Veiculo values
 select * from Veiculo;
 
 insert into Motorista values
-('06485568777', 'Maicão Perez', 1000, 11971717171, 5000),
-('06485568666', 'José Luiz', 1001, 11980996677, 5001),
-('06485568555', 'Paulo Silva', 1002, 11987651234, 5002),
-('06485568444', 'João de Deus', 1003, 31997958786, 5003),
-('06485568333', 'Bruno Santos', 1004, 31998979696, 5004);
+('06485568777', 'Maicão Perez', 11971717171, 1000, 5000),
+('06485568666', 'José Luiz', 11980996677, 1001, 5001),
+('06485568555', 'Paulo Silva', 11987651234, 1002, 5002),
+('06485568444', 'João de Deus', 31997958786, 1003, 5003),
+('06485568333', 'Bruno Santos',  31998979696, 1004, 5004);
 
 select * from Motorista;
 
