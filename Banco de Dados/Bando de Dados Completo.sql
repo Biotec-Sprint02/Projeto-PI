@@ -1,6 +1,6 @@
 create database BioTec;
 use BioTec;
-drop database Biotec;
+
 create table Empresa(
 idEmpresa int primary key auto_increment,
 nomeEmpresa varchar(40),
@@ -20,7 +20,9 @@ create table Veiculo(
 idVeiculo int primary key auto_increment,
 modeloVeiculo varchar(40),
 placaVeiculo varchar(8),
-tamanhoBau decimal (6,2) -- metros cubicos m³
+tamanhoBau decimal (6,2), -- metros cubicos m³
+fkEmpresaVeiculo int,
+foreign key (fkEmpresaVeiculo) references Empresa(idEmpresa)
 )auto_increment = 5000;
 
 create table Motorista(
@@ -29,8 +31,8 @@ nomeMotorista varchar (40),
 telefoneMotorista bigint,
 fkEmpresa int,
 foreign key (fkEmpresa) references Empresa(idEmpresa),
-fkVeiculo int,
-foreign key (fkVeiculo) references Veiculo(idVeiculo)
+fkVeiculoMotorista int,
+foreign key (fkVeiculoMotorista) references Veiculo(idVeiculo)
 );
 
 create table Sensor(
@@ -44,7 +46,8 @@ logDados datetime,
 temperatura float, -- em graus °C
 umidade varchar(20),
 fkSensor int,
-foreign key (fkSensor) references Sensor(idSensor)
+foreign key (fkSensor) references Sensor(idSensor),
+primary key(fkSensor)
 );
 -- --------------------------------------------------------------------------------------------------------------------------
 -- ==========================================================================================================================
@@ -61,11 +64,11 @@ insert into Empresa values
 select * from Empresa;
 
 insert into Veiculo values
-(null , 'R440' , 'DEF-8598' , '20.5'),
-(null , '110RH' , 'DAF-7854' , '24.5'),
-(null , '789DD' , 'BEF-1234' , '22.5'),
-(null , 'FH460' , 'OEF-6543' , '18.5'),
-(null , 'TR66-1' , 'PRF-8376' , '16.5');
+(null , 'R440' , 'DEF-8598' , '20.5', 1000),
+(null , '110RH' , 'DAF-7854' , '24.5', 1001),
+(null , '789DD' , 'BEF-1234' , '22.5', 1002),
+(null , 'FH460' , 'OEF-6543' , '18.5', 1003),
+(null , 'TR66-1' , 'PRF-8376' , '16.5', 1004);
 
 select * from Veiculo;
 
