@@ -1,6 +1,6 @@
 create database BioTec;
 use BioTec;
-
+drop database Biotec;
 create table Empresa(
 idEmpresa int primary key auto_increment,
 nomeEmpresa varchar(40),
@@ -13,7 +13,7 @@ cep char(9),
 emailEmpresa varchar(50),
 senhaEmpresa varchar(30),
 telefone1 bigint,
-telefone2 bigint
+telefone2 bigint null
 )auto_increment = 1000;
 
 create table Veiculo(
