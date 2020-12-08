@@ -26,7 +26,7 @@ foreign key (fkEmpresaVeiculo) references Empresa(idEmpresa)
 )auto_increment = 5000;
 
 create table Motorista(
-cpfMotorista varchar(20) primary key,
+cpfMotorista bigint primary key,
 nomeMotorista varchar (40),
 telefoneMotorista bigint,
 fkEmpresa int,
@@ -49,6 +49,15 @@ fkSensor int,
 foreign key (fkSensor) references Sensor(idSensor),
 primary key(fkSensor)
 );
+
+create table Viagem(
+idViagem int primary key auto_increment,
+fkveiculoviagem int,
+fkmotoristaviagem bigint,
+foreign key (fkmotoristaviagem) references motorista(cpfMotorista),
+foreign key (fkveiculoviagem) references veiculo(idveiculo)
+)auto_increment = 100000;
+
 -- --------------------------------------------------------------------------------------------------------------------------
 -- ==========================================================================================================================
 -- 											Separação das Tabelas e dos Inserts
@@ -98,3 +107,10 @@ insert into Dados values
 ('2020-07-06 19:00', '6.8', '57%', 5);
 
 select * from Dados;
+
+insert into Viagem values
+(null, 5000, 06485568777),
+(null, 5001, 06485568666),
+(null, 5002, 06485568555),
+(null, 5003, 06485568444),
+(null, 5004, 06485568333);
