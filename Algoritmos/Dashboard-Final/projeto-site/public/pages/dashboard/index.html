@@ -1,0 +1,438 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>TecX: Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoTecx.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <input type="checkbox" id="check" style="display: none;">
+    <!-- HEADER -->
+    <div class="header">
+        <div class="container">
+            <div class="title-header">
+                <img src="img/icons/user.svg" alt="">
+                <p>Olá, empresa
+                    <span>X</span>
+                </p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <img src="img/icons/search.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- FIM HEADER -->
+    <!-- MENU FECHADO -->
+    <div class="side-menu">
+        <label class="option" for="check">
+            <img src="img/icons/menu.svg" alt="">
+        </label>
+        <a onclick="changeToVehicles()">
+            <div class="option">
+                <img src="img/icons/truck.svg" alt="">
+            </div>
+        </a>
+        <a onclick="changeToProfile()">
+            <div class="option">
+                <img src="img/icons/settings.svg" alt="">
+            </div>
+        </a>
+        <div class="option">
+            <img src="img/icons/log-out.svg" alt="">
+        </div>
+    </div>
+    <!-- FIM MENU ABERTO -->
+    <!-- MENU ABERTO -->
+    <div class="side-menu_open">
+        <nav>
+            <label class="option" for="check">
+                <img src="img/icons/menu.svg" alt="">
+                <p>Menu</p>
+            </label>
+            <a onclick="changeToVehicles()">
+                <div class="option">
+                    <img src="img/icons/truck.svg" alt="">
+                    <p>Veículos</p>
+                </div>
+            </a>
+            <a onclick="changeToProfile()">
+                <div class="option">
+                    <img src="img/icons/settings.svg" alt="">
+                    <p>Opções</p>
+                </div>
+            </a>
+            <a onclick="">
+                <div class="option">
+                    <img src="img/icons/log-out.svg" alt="">
+                    <p>Logout</p>
+                </div>
+            </a>
+        </nav>
+    </div>
+    <!-- FIM MENU ABERTO -->
+    <section class="section_main">
+        <section class="section_container" id="home">
+            <div class="charts">
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>T</span>emperatura -
+                            <span>M</span>édia</p>
+                        <section>
+                            <div>
+                                <img src="img/icons/thermometer.svg" alt="">
+                                <label id='average'>
+                                    0.00
+                                </label>
+                            </div>
+                            <div>
+                                <img src="img/icons/clock.svg" alt="">
+                                <label id='averageHour'>
+                                    0.00
+                                </label>
+                            </div>
+                        </section>
+                        <section style="width:80%; height: 80%;">
+                            <canvas id="chart"></canvas>
+                        </section>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>U</span>midade -
+                            <span>M</span>édia</p>
+                        <section>
+                            <div>
+                                <img src="img/icons/droplet.svg" alt="">
+                                <label id='averageHumidity'>
+                                    0.00
+                                </label>
+                            </div>
+                            <div>
+                                <img src="img/icons/clock.svg" alt="">
+                                <label id='averageHourHumidity'>
+                                    0.00
+                                </label>
+                            </div>
+                        </section>
+                        <section style="width:80%; height:80%;">
+                            <canvas id="chart-humidity"></canvas>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="charts" id="home_2">
+                <div class="chart_div">
+                    <div class="container">
+                        <img src="img/examples/simpleChart.png" alt="">
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <img src="img/examples/chartTemp.jpg" alt="">
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <img src="img/examples/simpleChart2.png" alt="">
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <img src="img/examples/chartTemp.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Uma div por semântica = section pegando toda a tela de monitoramento -->
+        <section class="section_container" id="vehicles">
+            <div class="buttons">
+                <div class="buttons_div" style="background-color: #339FFF;;">
+                    <div class="container" style="padding-top: 0;">
+                        <p>Em Baixa</p>
+                    </div>
+                </div>
+                <div class="buttons_div" style="background-color: #FBF00E">
+                    <div class="container" style="padding-top: 0;">
+                        <p>Em queda</p>
+                    </div>
+                </div>
+                <div class="buttons_div" style="background-color: #27D72D;">
+                    <div class="container" style="padding-top: 0;">
+                        <p>Estável</p>
+                    </div>
+                </div>
+                <div class="buttons_div" style="background-color: #FF6C00;">
+                    <div class="container" style="padding-top: 0;">
+                        <p>Em crescente</p>
+                    </div>
+                </div>
+                <div class="buttons_div" style="background-color: #FF1616;">
+                    <div class="container" style="padding-top: 0;">
+                        <p>Em Alta</p>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <a onclick="changeToIndex()">
+                    <div class="chart_div">
+                        <div class="container">
+                            <p>
+                                <span>V</span>olvo
+                                <span>F</span>H - (DOB-4567) </p>
+                            <img class="truck_img" src="img/vehicles/volvo-truck.png" alt="">
+                            <div class="data-vehicle">
+                                <img src="img/icons/thermometer.svg" alt="">
+                                <label id='average2'>
+                                    0.00
+                                </label>
+                            </div>
+                            <div class="data-vehicle">
+                                <img src="img/icons/droplet.svg" alt="">
+                                <label id='averageHumidity2'>
+                                    0.00
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>S</span>cannia
+                            <span>4</span>50 - (DRT-7789) </p>
+                        <img class="truck_img" src="img/vehicles/scannia-truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average3'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity3'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>M</span>ercedes - (DRT-7789) </p>
+                        <img class="truck_img" src="img/vehicles/mercedes_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average4'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity4'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>M</span>ercedes - (DRT-7789) </p>
+                        <img class="truck_img" src="img/vehicles/mercedes_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average4'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity4'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>M</span>ercedes - (DRT-7789) </p>
+                        <img class="truck_img" src="img/vehicles/mercedes_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average4'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity4'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>M</span>ercedes - (DRT-7789) </p>
+                        <img class="truck_img" src="img/vehicles/mercedes_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average4'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity4'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>M</span>ercedes - (DRT-7789) </p>
+                        <img class="truck_img" src="img/vehicles/mercedes_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average4'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity4'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>V</span>olkswagen - (RML-0987)</p>
+                        <img class="truck_img" src="img/vehicles/volks_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average5'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity5'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>V</span>olkswagen - (RML-0987)</p>
+                        <img class="truck_img" src="img/vehicles/volks_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average5'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity5'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <div class="container">
+                        <p>
+                            <span>V</span>olkswagen - (RML-0987)</p>
+                        <img class="truck_img" src="img/vehicles/volks_truck.png" alt="">
+                        <div class="data-vehicle">
+                            <img src="img/icons/thermometer.svg" alt="">
+                            <label id='average5'>
+                                0.00
+                            </label>
+                        </div>
+                        <div class="data-vehicle">
+                            <img src="img/icons/droplet.svg" alt="">
+                            <label id='averageHumidity5'>
+                                0.00
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PÁGINA DE EDITAR PERFIL DAS EMPRESAS -->
+        <section class="section_container" id="profile" style="display: none;">
+            <div class="container">
+                <img src="img/examples/pngwing.com.p" alt="">
+            </div>
+            <div class="container">
+                <div class="naoSei"
+                    style="display:flex; flex-direction:row; justify-content: center; align-items: center;">
+                    <img style="width: 400px;" src="img/icons/logo.png" alt="">
+                    <div class="align">
+                        <div class="align_text">
+                            <p><span>P</span>erfil</p>
+                            <p>Edite as informações de sua empresa aqui.</p>
+                        </div>
+                        <input type="text" placeholder="Nome empresa">
+                        <input type="text" placeholder="CNPJ">
+                        <input type="text" class="ruaInput" placeholder="Rua">
+                        <input type="text" class="numInput" placeholder="N°">
+                        <input type="text" class="bairroInput" placeholder="Bairro">
+                        <input type="text" class="cidadeInput" placeholder="Cidade">
+                        <input type="text" class="cepInput" placeholder="CEP">
+                    </div>
+                </div>
+                <div class="align_button">
+                    <button>Salvar</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="chart_div">
+                    <div class="container">
+                        <img src="img/icons/truck.png" alt="">
+                        <p><span>A</span>dicionar <span>V</span>eículos</p>
+                    </div>
+                </div>
+                <div class="chart_div">
+                    <img style="width: 120px;" src="img/icons/carteira.png" alt="">
+                    <p><span>A</span>dicionar <span>M</span>otoristas</p>
+                </div>
+            </div>
+            <div class="motoristaRegister">
+                <p>aaaaaaaa</p>
+            </div>
+            
+
+        </section>
+        <!-- FIM PÁGINA DE EDITAR PERFIL EMPRESAS-->
+        <section class="section_container" id="options" style="display: none;">
+            <div class="container">
+                <p>opções</p>
+            </div>
+        </section>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+<script src="script.js"></script>
+
+</html>

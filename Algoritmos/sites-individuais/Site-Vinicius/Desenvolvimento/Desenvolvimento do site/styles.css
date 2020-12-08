@@ -1,0 +1,235 @@
+/* Global */
+body {
+    font-family: monospace, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  } 
+  .container{
+    width: 80%; 
+    margin: auto;
+    height: 0px;
+  }
+/* fim GLOBAL */
+
+/* Header */
+  .header{
+    background-color: #29e2c1;
+    height: 65px;
+    padding-top: 0px;
+  }
+  .title-header img{
+    height: 120px;
+    width: 140px;
+    position: relative;
+  } 
+  /* fim HEADER */
+
+  /* NAV */
+.nav ul
+{
+  margin: 0;
+}
+.title-header{
+    float: left;
+  }
+  .nav{
+    float: center;
+  }
+  .nav a{
+    text-decoration: none;
+    color: #def1f5;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-block-end: auto;
+  }
+  .nav li{
+    display: inline-block;
+    padding: 20px;
+    padding: 20px 30px 0 40px;
+  }
+  /* Fim NAV */
+
+  /* SHOWCASE */
+.showcase{ 
+  background-image: url(../imagem/imagem-inicio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #FFA500;
+  text-align: center;
+  min-height: 560px;
+  margin-bottom: 5px;
+}
+
+.showcase h1{
+  margin: 10px;  
+  font-size: 55px;
+  padding-top: 100px;
+}
+
+.showcase p{
+  font-size: 28px;
+}
+
+.final {
+  background-color: black;
+  height: 52px;
+  padding-top: 10px;
+}
+.final p {
+  text-align:center;
+  color: white;
+
+}
+/* Fim SHOWCASE */
+
+ /* SOBRE NÓS */
+ .sobre{ 
+  background-image: url(../imagem/quem-somos.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color:#FFA500;
+  text-align: center;
+  min-height: 560px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  
+}
+
+.sobre h1{
+  margin: 0px;  
+  font-size: 55px;
+  padding-top: 150px;
+}
+
+.sobre p{
+  font-size: 25px;
+}
+.mao {
+  background-image: url(../imagem/sobrenos2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px; 
+}
+/* Fim SOBRE NÓS */
+
+/* Equipe */
+
+.equipe {
+  background-image: url(../imagem/equipe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 560px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.equipe h2{
+  margin: 0;  
+  font-size: 55px;
+  padding-top: 30px;
+  text-align: center;
+  color: black;
+}
+.equipe p{
+  font-size: 22px;
+  color:  #000;
+}
+.fotos {
+  margin-top: 10px;
+  text-align:uppercase;
+}
+
+/* Fim Equipe*/
+
+/* MONITORAMENTO */
+
+.monitoramento {
+background-image: url(../imagem/Tela\ de\ monitoramento2.png);
+background-size: cover;
+  background-repeat: no-repeat;
+  color: #48bae7;
+  text-align: center;
+  min-height: 622px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+/* Fim do  MONITORAMENTO */
+
+/* SISTEMA DE ATENDIMENTO AO CLIENTE */
+.sac{ 
+  background-image: url(../imagem/sac.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  text-align: "float: left";
+  min-height: 560px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.sac h2{
+  margin: 0;  
+  font-size: 35px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.sac h3 {
+
+  margin: 0;  
+  font-size: 50px;
+  padding-top: 30px;
+}
+
+.sac li{
+  font-size: 25px;
+  color:black;
+}
+/* Fim SISTEMA DE ATENDIMENTO AO CLIENTE */
+
+/* Login */
+
+.login {
+  background-image: url(../imagem/login.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color:  white;
+  text-align: "float: left";
+  min-height: 560px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  
+}
+
+.login h1{
+  margin: 0;
+  text-align: center;
+  font-size: 60px;
+  padding-top: 210px;
+}
+
+.login form{
+  text-align: center;
+}
+
+.login input{
+  text-align: center;
+  height: 25px;
+  width: 450px;
+}
+
+.btn-blue{
+  background-color: #29e2c1;
+  color: black;
+  border-bottom: #29e2c1;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  text-align: center;
+  width: 180px;
+  height: 30px;
+}
+/* FIM do Login */
+
+

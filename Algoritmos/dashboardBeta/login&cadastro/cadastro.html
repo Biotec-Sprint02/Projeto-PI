@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;0,800;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logoTecx.png" />
+    <title>TecX: Cadastro</title>
+</head>
+
+<body>
+    <section class="background">
+        <section class="card-section">
+            <section class="information-side">
+                <div class="container">
+                    <img src="img/cadastro.png" alt="">
+                    <p class="welcome_msg">Bem vindo ao <span>T</span>ec<span>X</span></p>
+                    <p>O seu software de monitoramento ideal</p>
+                </div>
+            </section>
+
+            <section class="form-side">
+                <div class="logo-tecx">
+                    <h1>Cadastro</h1>
+                    <img src="img/logoTecx.png" alt="" style="display: block;">
+                </div>
+
+                <div id="register_step1">
+                    <div class="container">
+                        <div class="div_msg">
+                            <p>Preencha os campos abaixo para prosseguir</p>
+                        </div>
+                        <input type="text" placeholder="Nome empresa">
+                        <input type="text" placeholder="CNPJ">
+                        <input type="text" class="ruaInput" placeholder="Rua">
+                        <input type="text" class="numInput" placeholder="N°">
+                        <input type="text" placeholder="Bairro">
+                        <input type="text" class="cidadeInput" placeholder="Cidade">
+                        <input type="text" class="cepInput" placeholder="CEP">
+
+                        <div class="form-buttons">
+
+                            <a href="index.html">
+                                <p>Já possui cadastro?</p>
+                            </a>
+                            <button onclick="changeSteps()">Prosseguir</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="register_step2" style="display: none;">
+                    <div class="container">
+                        <div class="div_msg">
+                            <p>Insira e-mail e senha para finalizar seu cadastro</p>
+                        </div>
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Senha">
+                        <input type="text" placeholder="Confirmar senha">
+
+                        <div class="form-buttons">
+                            <a href="index.html">
+                                <p>Voltar</p>
+                            </a>
+                            <button onclick="changeSteps()">Finalizar</button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+
+
+        </section>
+
+    </section>
+</body>
+
+</html>
+
+<script>
+    function changeSteps() {
+        register_step1.style = "display: none";
+        register_step2.style = "display: block, flex";
+    }
+</script>
