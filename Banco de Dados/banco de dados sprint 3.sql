@@ -52,6 +52,7 @@ primary key(fkSensor)
 
 create table Viagem(
 idViagem int primary key auto_increment,
+statusViagem int,
 fkveiculoviagem int,
 fkmotoristaviagem bigint,
 foreign key (fkmotoristaviagem) references motorista(cpfMotorista),
@@ -109,8 +110,13 @@ insert into Dados values
 select * from Dados;
 
 insert into Viagem values
-(null, 5000, 06485568777),
-(null, 5001, 06485568666),
-(null, 5002, 06485568555),
-(null, 5003, 06485568444),
-(null, 5004, 06485568333);
+(null, 1, 5000, 06485568777),
+(null, 0, 5001, 06485568666),
+(null, null, 5002, 06485568555),
+(null, 1, 5003, 06485568444),
+(null, 1, 5004, 06485568333);
+
+select * from Viagem;
+
+-- Esse código aqui é para dropar o database quando necessário
+-- drop database BioTec;
