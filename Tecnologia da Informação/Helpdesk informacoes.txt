@@ -1,0 +1,10 @@
+Email de login Zendesk: lone9150@uorak.com
+Senha: biotecsuport
+
+
+Email gerado pelo zendesk para os tickets de suporte: support@biotecsuport.zendesk.com
+
+Url do zendesk: https://biotecsuport.zendesk.com/agent
+
+
+
