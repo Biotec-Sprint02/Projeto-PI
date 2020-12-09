@@ -44,7 +44,7 @@ foreign key (fkVeiculo) references Veiculo(idVeiculo)
 create table Dados(
 logDados datetime,
 temperatura float, -- em graus °C
-umidade varchar(20),
+umidade float,
 fkSensor int,
 foreign key (fkSensor) references Sensor(idSensor),
 primary key(fkSensor)
@@ -101,11 +101,11 @@ insert into Sensor values
 select * from Sensor;
 
 insert into Dados values
-('2020-11-05 15:00', '3.5', '50%', 1),
-('2020-12-09 16:00', '2.5', '60%', 2),
-('2020-09-08 17:00', '5', '45%', 3),
-('2020-08-07 18:00', '6.5', '63%', 4),
-('2020-07-06 19:00', '6.8', '57%', 5);
+('2020-11-05 15:00', '3.5', '50', 1),
+('2020-12-09 16:00', '2.5', '60', 2),
+('2020-09-08 17:00', '5', '40', 3),
+('2020-08-07 18:00', '6.5', '63', 4),
+('2020-07-06 19:00', '6.8', '57', 5);
 
 select * from Dados;
 
